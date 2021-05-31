@@ -1,0 +1,66 @@
+/* リセットCSS */
+body {
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+}
+h1,h2,h3,h4,h5,h6,p {
+  padding: 10px 0;
+  margin: 0;
+}
+
+ul,li {
+  padding: 0;
+  margin: 0;
+}
+
+.top_page_header{
+  
+}
+
+.header{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
+
+.header_title{
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.image_icon{
+  width: 7vw;
+}
+
+.login{
+  margin-right: 100px;
+}
+
+.title-contents {
+    height: 350px;
+    width: 100vw;
+    background-image:url('top_page.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}
+
+.service-title{
+  padding-left: 80px;
+  
+}
+
+
+
+.service-explain{
+  padding-left: 80px;
+
+}
