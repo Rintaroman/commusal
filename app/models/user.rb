@@ -9,7 +9,8 @@ class User < ApplicationRecord
     validates :nickname
     validates :phone_number
   end
-  
+
+  has_many :teams
   #validates :encrypted_password,:password,:password_confirmation,format:{with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]/}
 end
 
