@@ -55,12 +55,26 @@ ul,li {
 
 .service-title{
   padding-left: 80px;
-  
 }
-
-
 
 .service-explain{
   padding-left: 80px;
+}
 
+.list-btn{
+  display: flex;
+  justify-content: space-around;
+}
+
+.registrations-image{
+  width: 30vw;
+}
+
+.sessions-image{
+  width: 30vw;
+
+}
+
+.matching-image{
+  width: 30vw;
 }

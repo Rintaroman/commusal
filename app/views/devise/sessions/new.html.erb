@@ -1,0 +1,26 @@
+<div class= "registration_top">
+  <%= link_to image_tag("commusal_icon.png", class:"image_icon") %>
+  <h1>コミュサル</h1>
+</div>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <div class="field-form">
+      <label class="form-text">メールアドレス</label>
+    </div>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"input-text" %>
+  </div>
+
+  <div class="field">
+    <div class="field-form">
+      <label class="form-text">パスワード</label>
+    </div>
+    <%= f.password_field :password, autocomplete: "current-password", class:"input-text" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "ログイン" %>
+  </div>
+<% end %>
+
+
