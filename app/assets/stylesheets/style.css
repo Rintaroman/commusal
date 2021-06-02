@@ -78,3 +78,10 @@ ul,li {
 .matching-image{
   width: 30vw;
 }
+
+.error-message{
+  font-size: 20px;
+  color: crimson;
+  text-align: center;
+  margin: 15px;
+}

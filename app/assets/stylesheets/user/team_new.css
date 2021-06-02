@@ -1,0 +1,28 @@
+.user_create{
+  text-align: center;
+  margin: 25px;
+}
+
+.level{
+  font-size: 15px;
+  display:flex;
+  align-items: center;
+}
+
+.level_category{
+  border: solid 2px;
+  height: 40px;
+  width: 200px;
+  margin: 7px 20px 8px 150px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.input-text_area{
+  height: 80px;
+  margin-bottom: 30px;
+  resize: none;
+  
+}
+
+
