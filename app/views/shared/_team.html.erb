@@ -1,0 +1,18 @@
+<table class="table">
+  <tbody>
+    <tr>
+      <th class="table__col1">チーム名</th>
+      <td class="table__col2"><%= team.teamname %></td>
+    </tr>
+    <tr>
+      <th class="table__col1">レベル</th>
+      <td class="table__col2"><%= team.level.name %></td>
+    </tr>
+    <tr>
+      <th class="table__col1">チーム紹介</th>
+      <td class="table__col2"><%= team.comment %></td>
+    </tr>
+  </tbody>
+</table>
+
+<%= link_to "編集", edit_team_path(team.id), class: "edit_team" %>
