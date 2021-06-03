@@ -20,8 +20,13 @@
   else
     new_user_registration_path
   end %>
-  
-  <%= link_to image_tag("sessions_image.jpg", class:"sessions-image"), new_user_session_path %>
+
+  <%= link_to image_tag("sessions_image.jpg", class:"sessions-image"),
+    if user_signed_in?
+      user_path(current_user)
+    else
+      new_user_session_path
+    end %>
   
   <%= link_to image_tag("matching_image.jpg", class:"matching-image"), "#" %>
 </div>

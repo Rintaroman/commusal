@@ -16,6 +16,10 @@ class TeamsController < ApplicationController
     end
   end
 
+  def show
+    
+  end
+
 
 
   private

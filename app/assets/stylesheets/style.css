@@ -14,8 +14,10 @@ ul,li {
   margin: 0;
 }
 
-.top_page_header{
-  
+.top_nickname{
+  display: flex;
+  align-items: center;
+  font-size: 25px;  
 }
 
 .header{
@@ -35,7 +37,8 @@ ul,li {
 }
 
 .login{
-  margin-right: 100px;
+  margin-right: 50px;
+  margin-left: 50px;
 }
 
 .title-contents {
