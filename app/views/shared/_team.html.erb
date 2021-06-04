@@ -1,18 +1,24 @@
-<table class="table">
-  <tbody>
-    <tr>
-      <th class="table__col1">チーム名</th>
-      <td class="table__col2"><%= team.teamname %></td>
-    </tr>
-    <tr>
-      <th class="table__col1">レベル</th>
-      <td class="table__col2"><%= team.level.name %></td>
-    </tr>
-    <tr>
-      <th class="table__col1">チーム紹介</th>
-      <td class="table__col2"><%= team.comment %></td>
-    </tr>
-  </tbody>
-</table>
+<div class="table">
+  <table>
+    <tbody>
+      <tr>
+        <th class="table__col1">チーム名</th>
+        <td class="table__col2"><%= team.teamname %></td>
+      </tr>
+      <tr>
+        <th class="table__col1">レベル</th>
+        <td class="table__col2"><%= team.level.name %></td>
+      </tr>
+      <tr>
+        <th class="table__col1">チーム紹介</th>
+        <td class="table__col2"><%= team.comment %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-<%= link_to "編集", edit_team_path(team.id), class: "edit_team" %>
+<div class="edit_delete">
+  <%= link_to "編集", edit_team_path(team.id), class: "edit_team" %>
+
+  <%= link_to "⚠チーム削除⚠️", team_path(team.id), method: :delete, class: "delete_team" %>
+</div>

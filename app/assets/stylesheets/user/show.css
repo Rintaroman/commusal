@@ -39,3 +39,17 @@
   padding: 16px 8px;
 }
 
+.edit_delete{
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 60px;
+  padding-bottom: 20px;
+  
+}
+
+.delete_team{
+  text-decoration: none;
+  color: black;
+}

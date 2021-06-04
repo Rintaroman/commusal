@@ -34,6 +34,10 @@ class TeamsController < ApplicationController
     end
   end
 
+  def delete
+    @team = Team.delete
+  end
+
 
 
   private
