@@ -1,23 +1,60 @@
-<%= form_with(model: @event, local: true) do |form| %>
 
-  <div class="calendar_title">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+<%= render 'shared/pagetop'%>
+
+<div class="user_create">
+  <h1>対戦募集ページ</h1>
+</div>
+
+<%= form_with(model: @calendar, local: true) do |f| %>
+
+  <div class="date-wrap">
+    <div class='input-date-wrap'>
+      <label class="form-text">日時</label>
+      <span class="indispensable">必須</span>
+    </div>
+      <%=  f.datetime_select :date, use_month_numbers: true, discard_year: true, minute_step: 30, prompt:'--', date_separator: "月", datetime_separator: "日", class: "date_form" %>
   </div>
 
-  <div class="time">
-    <%= form.label :start_time %>
-    <%= form.datetime_select :start_time %>
+  <div class="field">
+    <div class="field-form">
+      <label class="form-text">都道府県</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"input-text"}) %>
   </div>
 
-  <div class="content">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
+  <div class="field">
+    <div class="field-form">
+      <label class="form-text">開催場所</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_field :place,class:"input-text" %>
   </div>
 
-
-  <div class="submit">
-    <%= form.submit %>
+  <div class="field">
+    <div class="field-form">
+      <label class="form-text">費用</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_field :cost,class:"input-text" %>
   </div>
+
+  <div class="field">
+    <div class="field-form">
+      <label class="form-text">募集チーム数</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_field :recruitment,class:"input-text" %>
+  </div>
+
+  <div class="date-wrap">
+     <div class='input-date-wrap'>
+      <label class="form-text">募集締め切り日</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.date_select :deadline, use_month_numbers: true, discard_year: true, prompt:'--', date_separator: "月",class: "date_form" %> <span>日</span>
+  </div>
+  
+
 
 <% end %>
