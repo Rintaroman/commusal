@@ -2,7 +2,14 @@
 
 <%= link_to '新規対戦募集', new_calendar_path %>
 
-<%= month_calendar do |date| %>
+<%= month_calendar events: @calendars do |date, calendars | %>
   <%= date %>
+
+  <% calendars.each do |calendar| %>
+    <div>
+      <%= calendar.title %>
+    </div>
+  <% end %>
+
 <% end %>
 

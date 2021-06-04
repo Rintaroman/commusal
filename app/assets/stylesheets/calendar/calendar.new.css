@@ -12,6 +12,8 @@
   margin-bottom: 20px;
 }
 
-.date_form{
-  
+.date--form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -7,12 +7,24 @@
 
 <%= form_with(model: @calendar, local: true) do |f| %>
 
+  <div class="field">
+    <div class="field-form">
+      <label class="form-text">募集タイトル</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_field :title,class:"input-text" %>
+  </div>
+
+
   <div class="date-wrap">
     <div class='input-date-wrap'>
       <label class="form-text">日時</label>
       <span class="indispensable">必須</span>
     </div>
-      <%=  f.datetime_select :date, use_month_numbers: true, discard_year: true, minute_step: 30, prompt:'--', date_separator: "月", datetime_separator: "日", class: "date_form" %>
+    <div class="date--form">
+      <%= raw sprintf(f.datetime_select( :date, use_month_numbers: true, start_year: 2021, minute_step: 30, prompt:'--', datetime_separator: '日', date_separator: '%s'),
+                  "<p> 年 </p>", "<p> 月 </p>")  %>
+    </div>
   </div>
 
   <div class="field">
@@ -33,10 +45,11 @@
 
   <div class="field">
     <div class="field-form">
-      <label class="form-text">費用</label>
+      <label class="form-text">チーム参加費</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.text_field :cost,class:"input-text" %>
+    <div class="cost_block">
+    <%= f.text_field :cost,class:"input-text" %> <span>円</span>
   </div>
 
   <div class="field">
@@ -48,13 +61,15 @@
   </div>
 
   <div class="date-wrap">
-     <div class='input-date-wrap'>
+    <div class='input-date-wrap'>
       <label class="form-text">募集締め切り日</label>
       <span class="indispensable">必須</span>
     </div>
     <%= f.date_select :deadline, use_month_numbers: true, discard_year: true, prompt:'--', date_separator: "月",class: "date_form" %> <span>日</span>
   </div>
   
-
+  <div class="actions">
+    <%= f.submit "対戦登録" %>
+  </div>
 
 <% end %>
