@@ -16,6 +16,9 @@ class CalendarsController < ApplicationController
     end
   end
   
+  def show
+    @calendar = Calendar.find(params[:id])
+  end
   
   private
   
