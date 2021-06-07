@@ -27,34 +27,38 @@
 
 # データベース設計
 ## teamテーブル
-| colum     | type    | options     |
-| --------- | ------- | ----------- |
-| team_name | string  | null: false |
-| level_id  | integer | null: false |
-| comment   | text    |             |
+| colum     | type       | options           |
+| --------- | ---------- | ----------------- |
+| team_name | string     | null: false       |
+| level_id  | integer    | null: false       |
+| comment   | text       |                   |
+| user      | references | foreign_key: true |
 
 ### association
-- has_many :team_calendar
+- has_many :calendar
 - has_many :chat
 - belongs_to :user
+- has_one :join
 
 
 
 ## calendarテーブル
-| colum         | type     | options     |
-| ------------- | -------- | ----------- |
-| date          | datetime | null: false |
-| place         | string   | null: false |
-| prefecture_id | integer  | null: false |
-| cost          | integer  | null: false |
-| recruitment   | integer  | null: false |
-| deadline      | datetime | null: false |
+| colum         | type       | options           |
+| ------------- | ---------- | ----------------- |
+| date          | datetime   | null: false       |
+| place         | string     | null: false       |
+| prefecture_id | integer    | null: false       |
+| cost          | integer    | null: false       |
+| recruitment   | integer    | null: false       |
+| deadline      | datetime   | null: false       |
+| team          | references | foreign_key: true |
 
 ### association
-- has_many :team_calender
+- belongs_to :team
+- has_one :join
 
 
-## team_calenderテーブル
+## joinテーブル
 | colum    | type       | options                        |
 | -------- | ---------- | ------------------------------ |
 | team     | references | null: false, foreign_key: true |

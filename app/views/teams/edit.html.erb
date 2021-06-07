@@ -1,0 +1,60 @@
+<div class= "registration_top">
+  <%= link_to image_tag("commusal_icon.png", class:"image_icon"), root_path %>
+  <h1>コミュサル</h1>
+</div>
+
+<div class="user_create">
+  <h1>チーム情報編集</h1>
+</div>
+
+<%= form_with model: @team, url: team_path(@team.id) , class:'team_registration', local: true do |f| %>
+  <%= render 'shared/error_messages', model: f.object %>
+
+
+  <div class="field">
+    <div class="field-form">
+      <label class="form-text">チームネーム</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_field :teamname,class:"input-text" %>
+  </div>
+
+  <div class="field">
+    <div class="field-form">
+      <label class="form-text">チームレベル</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.collection_select(:level_id, Level.all, :id, :name, {}, {class:"input-text"}) %>
+  </div>
+
+  <div class="level">
+    <div class="level_category">★上級クラス★</div>
+    <p>サッカー・フットサル経験者の中でも上級者でフットサルのリーグなどに参加しているチーム。</p>
+  </div>
+  <div class="level">
+    <div class="level_category">★中級クラス★</div>
+    <p>サッカー・フットサル経験者が多く、試合の勝ち負けにこだわりたいチーム</p>
+  </div>
+  <div class="level">
+    <div class="level_category">★初級クラス★</div>
+    <p>サッカー・フットサル経験者が半数以上いるが、普段からあまり運動をしていないチーム</p>
+  </div>
+  <div class="level">
+    <div class="level_category">★未経験クラス★</div>
+    <p>サッカー・フットサル未経験者が中心で、楽しく試合を行いたいチーム</p>
+  </div>
+
+<div class="field">
+    <div class="field-form">
+      <label class="form-text">チームコメント</label>
+    </div>
+    <%= f.text_area :comment, class:"input-text_area",placeholder:"例)MIXのチームで活動しております。" %>
+</div>
+<div class="actions_edit">
+      <%= f.submit "情報変更", class: "actions_edit" %>
+</div>
+
+
+
+
+<% end %>

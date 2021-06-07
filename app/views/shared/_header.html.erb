@@ -9,7 +9,12 @@
       <h1>コミュサル</h1>
     </div>
     <% if user_signed_in?%>
-      
-    <%= link_to 'ログイン',new_user_session_path , class: "login" %>
+      <div class="top_nickname">
+        <h3> ようこそ、</h3>
+        <%= current_user.nickname + "さん" %>
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "login" %>
+    <% else %>
+      <%= link_to 'ログイン',new_user_session_path , class: "login" %>
+    <% end %>
   </div>
 </header>

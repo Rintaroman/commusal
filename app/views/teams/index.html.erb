@@ -14,7 +14,19 @@
   </div>
 
 <div class="list-btn">
-  <%= link_to image_tag("registrations_image.jpg", class:"registrations-image"), new_user_registration_path %>
-  <%= link_to image_tag("sessions_image.jpg", class:"sessions-image"), new_user_session_path %>
-  <%= link_to image_tag("matching_image.jpg", class:"matching-image"), "#" %>
+  <%= link_to image_tag("registrations_image.JPG", class:"registrations-image"), 
+  if user_signed_in?
+    new_team_path
+  else
+    new_user_registration_path
+  end %>
+
+  <%= link_to image_tag("sessions_image.JPG", class:"sessions-image"),
+    if user_signed_in?
+      user_path(current_user)
+    else
+      new_user_session_path
+    end %>
+  
+  <%= link_to image_tag("matching_image.JPG", class:"matching-image"), calendars_path %>
 </div>

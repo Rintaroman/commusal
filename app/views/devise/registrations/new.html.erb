@@ -1,5 +1,5 @@
 <div class= "registration_top">
-  <%= link_to image_tag("commusal_icon.png", class:"image_icon") %>
+  <%= link_to image_tag("commusal_icon.png", class:"image_icon"), root_path %>
   <h1>コミュサル</h1>
 </div>
 
@@ -17,10 +17,18 @@
 
   <div class="field">
     <div class="field-form">
-      <label class="form-text">氏名</label>
+      <label class="form-text">お名前(性)</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.text_field :name,class:"input-text"%>
+    <%= f.text_field :first_name,class:"input-text"%>
+  </div>
+
+  <div class="field">
+    <div class="field-form">
+      <label class="form-text">お名前(名)</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_field :last_name,class:"input-text"%>
   </div>
 
   <div class="field">
@@ -56,7 +64,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "会員登録" %>
+    <%= f.submit "会員登録&チーム登録へ", class:"team_sing_up_btn" %>
   </div>
 <% end %>
 

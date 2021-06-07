@@ -1,0 +1,7 @@
+<div class="user_page">
+  <h1 class="user_page_header">
+    <%=current_user.nickname + "さんのチーム情報" %>
+  </h1>
+  
+  <%= render partial: "shared/team", collection: @user.teams %>
+</div>

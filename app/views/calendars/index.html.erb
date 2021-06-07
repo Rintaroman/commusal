@@ -1,0 +1,15 @@
+<h1>calendar</h1>
+
+<%= link_to '新規対戦募集', new_calendar_path %>
+
+<%= month_calendar events: @calendars do |date, calendars| %>
+  <%= date %>
+
+  <% calendars.each do |calendar| %>
+    <div>
+      <%= link_to calendar.title, calendar_path(calendar.id) %>
+    </div>
+  <% end %>
+
+<% end %>
+

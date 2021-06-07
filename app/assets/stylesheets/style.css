@@ -14,8 +14,10 @@ ul,li {
   margin: 0;
 }
 
-.top_page_header{
-  
+.top_nickname{
+  display: flex;
+  align-items: center;
+  font-size: 25px;  
 }
 
 .header{
@@ -35,7 +37,8 @@ ul,li {
 }
 
 .login{
-  margin-right: 100px;
+  margin-right: 50px;
+  margin-left: 50px;
 }
 
 .title-contents {
@@ -78,3 +81,16 @@ ul,li {
 .matching-image{
   width: 30vw;
 }
+
+.error-message{
+  font-size: 20px;
+  color: crimson;
+  text-align: center;
+  margin: 15px;
+}
+
+.actions_edit{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
