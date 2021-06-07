@@ -8,6 +8,7 @@ class CreateCalendars < ActiveRecord::Migration[6.0]
       t.integer :cost           ,null: false
       t.integer :recruitment    ,null: false
       t.datetime :deadline      ,null: false
+      
 
       t.timestamps
     end

@@ -5,7 +5,7 @@
   <h1>対戦募集ページ</h1>
 </div>
 
-<%= form_with(model: @calendar, local: true) do |f| %>
+<%= form_with model: @calendar, local: true do |f| %>
 
   <div class="field">
     <div class="field-form">
@@ -15,6 +15,12 @@
     <%= f.text_field :title,class:"input-text" %>
   </div>
 
+  <select>
+    <option value="">参加するチームを選択してください</option>
+    <% Team.where(id: current_user.id).each do |user| %>
+      <option><%= user.teamname %></option>
+    <% end %>
+  </select>
 
   <div class="date-wrap">
     <div class='input-date-wrap'>
