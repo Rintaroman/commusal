@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resources :teams 
   resources :calendars do
-    resources :join, only: [:new, :create]
+    resources :joins, only: [:new, :create]
   end
 
 end

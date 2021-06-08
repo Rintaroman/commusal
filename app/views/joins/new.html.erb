@@ -38,12 +38,24 @@
           <th class="table__col1">募集投稿チーム</th>
           <td class="table__col2"><%= @calendar.team.teamname %></td>
         </tr>
+        <tr>
+          <th class="table__col1">参加チーム</th>
+          <td class="table__col2"><%#=  %></td>
+        </tr>
       </tbody>
     </table>
-
-    <%#= link_to "編集", "#" %>
-    <%#= link_to "削除", "#" %>
-
-    <%= link_to "対戦参加", new_calendar_join_path(@calendar.id) %>
   </div>
 
+
+
+<%= form_with(model:[@calendar,@join], local: true) do |f| %>
+    <select name="join[team_id]">
+      <option value="">参加するチームを選択してください</option>
+      <% Team.where(user_id: current_user.id).each do |team| %>
+        <option value=<%= team.id%>><%= team.teamname %></option>
+      <% end %>
+    </select>
+    <div class="actions">
+      <%= f.submit "対戦参加" %>
+    </div>
+<% end %>

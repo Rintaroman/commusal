@@ -4,7 +4,8 @@ class CalendarsController < ApplicationController
   end
 
   def new
-    @calendar = Calendar.new
+    @calendar = Calendar.find(params[:id])
+    @join = Join.new
   end
 
   def create
