@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: "teams#index"
   resources :users, only: :show
   resources :teams 
-  resources :calendars
+  resources :calendars do
+    resources :join, only: [:new, :create]
+  end
 
 end

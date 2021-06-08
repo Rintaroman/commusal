@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_04_015703) do
+ActiveRecord::Schema.define(version: 2021_06_07_074415) do
 
   create_table "calendars", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
@@ -20,8 +20,19 @@ ActiveRecord::Schema.define(version: 2021_06_04_015703) do
     t.integer "cost", null: false
     t.integer "recruitment", null: false
     t.datetime "deadline", null: false
+    t.bigint "team_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["team_id"], name: "index_calendars_on_team_id"
+  end
+
+  create_table "joins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "team_id"
+    t.bigint "calendar_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["calendar_id"], name: "index_joins_on_calendar_id"
+    t.index ["team_id"], name: "index_joins_on_team_id"
   end
 
   create_table "teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -50,5 +61,8 @@ ActiveRecord::Schema.define(version: 2021_06_04_015703) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "calendars", "teams"
+  add_foreign_key "joins", "calendars"
+  add_foreign_key "joins", "teams"
   add_foreign_key "teams", "users"
 end

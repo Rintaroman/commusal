@@ -15,10 +15,10 @@
     <%= f.text_field :title,class:"input-text" %>
   </div>
 
-  <select>
+  <select name="calendar[team_id]">
     <option value="">参加するチームを選択してください</option>
-    <% Team.where(id: current_user.id).each do |user| %>
-      <option><%= user.teamname %></option>
+    <% Team.where(user_id: current_user.id).each do |team| %>
+      <option value=<%= team.id%>><%= team.teamname %></option>
     <% end %>
   </select>
 

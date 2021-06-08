@@ -1,3 +1,8 @@
+<div class= "registration_top">
+  <%= link_to image_tag("commusal_icon.png", class:"image_icon"), root_path %>
+  <h1>コミュサル</h1>
+</div>
+
 <div class= "calendar_show">
   <%= @calendar.title %>
 </div>
@@ -29,8 +34,16 @@
           <th class="table__col1">募集締め切り日</th>
           <td class="table__col2"><%= @calendar.deadline %></td>
         </tr>
-        
+        <tr>
+          <th class="table__col1">募集投稿チーム</th>
+          <td class="table__col2"><%= @calendar.team.teamname %></td>
+        </tr>
       </tbody>
     </table>
+
+    <%#= link_to "編集", "#" %>
+    <%#= link_to "削除", "#" %>
+
+    <%= link_to "対戦参加" new_calendar_join_path(@calendar.id) %>
   </div>
 
