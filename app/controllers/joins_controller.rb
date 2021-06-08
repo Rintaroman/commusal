@@ -6,19 +6,18 @@ class JoinsController < ApplicationController
   end
 
   def create
-    binding.pry
     @join = Join.new(join_params)
       if @join.save
         redirect_to root_path
       else
-        render :new
+        redirect_to new_calendar_join_path
       end
   end
 
   private
 
   def join_params
-    params.require(:join).permit(:team_id)
+    params.require(:join).permit(:team_id).merge(calendar_id: params[:calendar_id])
   end
 
 

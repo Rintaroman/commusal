@@ -19,6 +19,7 @@ class CalendarsController < ApplicationController
   
   def show
     @calendar = Calendar.find(params[:id])
+    @join = Join.new
   end
   
   private
