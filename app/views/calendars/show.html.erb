@@ -36,7 +36,7 @@
         </tr>
         <tr>
           <th class="table__col1">募集投稿チーム</th>
-          <td class="table__col2"><%= @calendar.team.teamname %></td>
+          <td class="table__col2"><%= link_to @calendar.team.teamname, team_path(@calendar.team.id)  %></td>
         </tr>
         
       </tbody>
