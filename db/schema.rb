@@ -29,8 +29,10 @@ ActiveRecord::Schema.define(version: 2021_06_09_154739) do
   create_table "chats", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "message", null: false
     t.bigint "team_id"
+    t.bigint "calendar_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["calendar_id"], name: "index_chats_on_calendar_id"
     t.index ["team_id"], name: "index_chats_on_team_id"
   end
 
@@ -70,6 +72,7 @@ ActiveRecord::Schema.define(version: 2021_06_09_154739) do
   end
 
   add_foreign_key "calendars", "teams"
+  add_foreign_key "chats", "calendars"
   add_foreign_key "chats", "teams"
   add_foreign_key "joins", "calendars"
   add_foreign_key "joins", "teams"
