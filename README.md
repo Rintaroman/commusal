@@ -70,9 +70,10 @@
 
 
 ## chatテーブル
-| colum   | type | options    |
-| ------- | ---- | ---------- |
-| message | text | nul: false |
+| colum   | type       | options                        |
+| ------- | ---------- | ------------------------------ |
+| message | text       | nul: false                     |
+| team    | references | null: false, foreign_key: true |
 
 ### association
 - belong_to :team
