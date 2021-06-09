@@ -51,15 +51,16 @@
   </div>
 
 
-
-<%= form_with(model:[@calendar,@join], local: true) do |f| %>
-    <select name="join[team_id]">
-      <option value="">参加するチームを選択してください</option>
-      <% Team.where(user_id: current_user.id).each do |team| %>
-        <option value=<%= team.id%>><%= team.teamname %></option>
-      <% end %>
-    </select>
-    <div class="actions">
-      <%= f.submit "対戦参加" %>
-    </div>
+<% if current_user.id != @calendar.team.user_id %>
+  <%= form_with(model:[@calendar,@join], local: true) do |f| %>
+      <select name="join[team_id]">
+        <option value="">参加するチームを選択してください</option>
+        <% Team.where(user_id: current_user.id).each do |team| %>
+          <option value=<%= team.id%>><%= team.teamname %></option>
+        <% end %>
+      </select>
+      <div class="actions">
+        <%= f.submit "対戦参加" %>
+      </div>
+  <% end %>
 <% end %>

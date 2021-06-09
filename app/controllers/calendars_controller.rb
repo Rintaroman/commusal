@@ -20,6 +20,26 @@ class CalendarsController < ApplicationController
     @calendar = Calendar.find(params[:id])
     @join = Join.new
   end
+
+  def edit
+    @calendar = Calendar.find(params[:id])
+  end
+
+  def update
+    @calendar = Calendar.find(params[:id])
+    if @calendar.update(calendar_params)
+      redirect_to calendars_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+      calendar = Calendar.find(params[:id])
+      calendar.destroy
+  end
+
+  
   
   private
   

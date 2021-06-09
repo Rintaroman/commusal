@@ -38,11 +38,14 @@
           <th class="table__col1">募集投稿チーム</th>
           <td class="table__col2"><%= @calendar.team.teamname %></td>
         </tr>
+        
       </tbody>
     </table>
 
-    <%#= link_to "編集", "#" %>
-    <%#= link_to "削除", "#" %>
+    <% if @calendar.team.user_id == current_user.id %>
+      <%= link_to "編集", edit_calendar_path(@calendar.id) %>
+      <%= link_to "削除", calendar_path(@calendar.id), method: :delete %>
+    <% end %>
 
     <%= link_to "対戦参加", new_calendar_join_path(@calendar.id) %>
   </div>
