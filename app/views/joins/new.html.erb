@@ -36,7 +36,7 @@
         </tr>
         <tr>
           <th class="table__col1">募集投稿チーム</th>
-          <td class="table__col2"><%= @calendar.team.teamname %></td>
+          <td class="table__col2"><%= link_to @calendar.team.teamname %></td>
         </tr>
         <tr>
           <th class="table__col1">参加チーム</th>
@@ -50,6 +50,7 @@
     </table>
   </div>
 
+<%= link_to "メッセージを送る", calendar_chats_path(@calendar.id) %>
 
 <% if current_user.id != @calendar.team.user_id %>
   <%= form_with(model:[@calendar,@join], local: true) do |f| %>

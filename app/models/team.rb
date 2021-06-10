@@ -4,6 +4,7 @@ class Team < ApplicationRecord
   belongs_to_active_hash :level
   has_many :calendar
   has_one :join
+  has_many :chats
   
 
 
