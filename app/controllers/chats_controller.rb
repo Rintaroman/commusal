@@ -8,9 +8,8 @@ class ChatsController < ApplicationController
   def create
     @calendar = Calendar.find(params[:calendar_id])
     @chat = @calendar.chats.new(chat_params)
-    binding.pry
     if @chat.save
-      redirect to calendar_chats(@calendar.id)
+      redirect_to calendar_chats_path(@calendar.id)
     else
       @chats = @calendar.chats.includes(:team)
       render :index

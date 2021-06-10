@@ -11,6 +11,12 @@
 </div>
 
 <%= form_with model: [@calendar, @chat], class: 'form', local: true do |f| %>
+  <select name="chat[team_id]">
+        <option value="">チャットを送るチームを選択してください</option>
+        <% Team.where(user_id: current_user.id).each do |team| %>
+          <option value=<%= team.id%>><%= team.teamname %></option>
+        <% end %>
+      </select>
   <div class="form-input">
     <%= f.text_field :message, class: 'form-message', placeholder: 'メッセージを入力してください' %>
   </div>
