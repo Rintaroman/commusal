@@ -36,15 +36,15 @@
         </tr>
         <tr>
           <th class="table__col1">募集投稿チーム</th>
-          <td class="table__col2"><%= link_to @calendar.team.teamname %></td>
+          <td class="table__col2"><%= link_to @calendar.team.teamname, team_path(@calendar.team.id) %></td>
         </tr>
         <tr>
           <th class="table__col1">参加チーム</th>
-          <td class="table__col2">
-            <% Join.where(calendar_id: params[:calendar_id]).each do |join| %>
-              <%= join.team.teamname + "/" %>
-            <% end %>
-          </td>
+            <td class="table__col2">
+              <% Join.where(calendar_id: params[:calendar_id]).each do |join| %>
+                <%= link_to join.team.teamname, team_path(join.team.id) + "/" %>
+              <% end %>
+            </td>
         </tr>
       </tbody>
     </table>
