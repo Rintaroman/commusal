@@ -40,11 +40,11 @@
         </tr>
         <tr>
           <th class="table__col1">参加チーム</th>
-            <td class="table__col2">
-              <% Join.where(calendar_id: params[:calendar_id]).each do |join| %>
-                <%= link_to join.team.teamname, team_path(join.team.id) + "/" %>
-              <% end %>
-            </td>
+          <td class="table__col2">
+            <% Join.where(calendar_id: params[:calendar_id]).each do |join| %>
+              <%= link_to join.team.teamname, team_path(join.team.id) + "/" %>
+            <% end %>
+          </td>
         </tr>
       </tbody>
     </table>
