@@ -1,0 +1,24 @@
+<%= render 'shared/pagetop'%>
+
+<div class= "calendar_show">
+  <%= @team.teamname %>
+</div>
+
+<div class="calendar_table">
+  <table>
+    <tbody>
+      <tr>
+        <th class="table__col1">チーム名</th>
+        <td class="table__col2"><%= @team.teamname %></td>
+      </tr>
+      <tr>
+        <th class="table__col1">チームレベル</th>
+        <td class="table__col2"><%= @team.level.name %></td>
+      </tr>
+      <tr>
+        <th class="table__col1">チームコメント</th>
+        <td class="table__col2"><%= @team.comment %></td>
+      </tr>
+      </tbody>
+    </table>
+</div>
