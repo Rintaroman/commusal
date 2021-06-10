@@ -1,3 +1,7 @@
+.calendar-body{
+  margin: 20px;
+}
+
 .calendar_show{
   text-align: center;
   margin: 80px;
@@ -9,6 +13,34 @@
   width: 60vw;
   margin: 0 auto;
   font-size: 25px;
+}
 
+.calendar-new{
+  color: blue;
+  style: none;
+  
+}
+
+.date-wrap{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.date-wrap select{
+  height: 40px;
+  width: 70px;
+}
+
+.input-date-wrap{
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.date--form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 

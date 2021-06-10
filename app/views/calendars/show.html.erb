@@ -47,6 +47,8 @@
       <%= link_to "削除", calendar_path(@calendar.id), method: :delete %>
     <% end %>
 
-    <%= link_to "対戦参加", new_calendar_join_path(@calendar.id) %>
+    <div class= "link-chat">
+      <%= link_to "参加ページへ", new_calendar_join_path(@calendar.id)  %>
+    </div>
   </div>
 

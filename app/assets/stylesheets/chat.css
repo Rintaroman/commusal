@@ -1,0 +1,41 @@
+.chat-title{
+  text-align:initial;
+  font-size: 30px;
+  margin: 60px;
+}
+
+.form-input {
+  background-color: white;
+  display: flex;
+  width: 100%;
+}
+
+.form-message {
+  border: none;
+  height: 50px;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.form {
+  background-color: #DDDDDD;
+  height: 90px;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+}
+
+.form-submit {
+  background-color: #38f050;
+  border: none;
+  color: white;
+  font-size: 16px;
+  height: 50px;
+  margin-left: 15px;
+  padding: 0 20px;
+}
+
+.chat-select{
+  border: none;
+  
+}

@@ -1,8 +1,10 @@
-<h1>calendar</h1>
+<%= render 'shared/pagetop'%>
 
-<%= link_to '新規対戦募集', new_calendar_path %>
+<h1>対戦募集</h1>
 
-<%= month_calendar events: @calendars do |date, calendars| %>
+<%= link_to '新規対戦募集', new_calendar_path, class: "calendar-new" %>
+
+<%= month_calendar events: @calendars, class: "calendar-body" do |date, calendars|  %>
   <%= date %>
 
   <% calendars.each do |calendar| %>
