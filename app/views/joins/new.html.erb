@@ -50,6 +50,7 @@
     </table>
   </div>
 
+<%= link_to "メッセージを送る", calendar_chats_path(@calendar.id) %>
 
 <% if current_user.id != @calendar.team.user_id %>
   <%= form_with(model:[@calendar,@join], local: true) do |f| %>

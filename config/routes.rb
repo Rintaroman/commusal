@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :teams 
   resources :calendars do
     resources :joins, only: [:new, :create]
+    resources :chats, only: [:index, :create]
   end
 
 end

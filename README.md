@@ -56,6 +56,7 @@
 ### association
 - belongs_to :team
 - has_one :join
+- has_many :chat
 
 
 ## joinテーブル
@@ -70,13 +71,15 @@
 
 
 ## chatテーブル
-| colum   | type       | options                        |
-| ------- | ---------- | ------------------------------ |
-| message | text       | nul: false                     |
-| team    | references | null: false, foreign_key: true |
+| colum    | type       | options                        |
+| -------- | ---------- | ------------------------------ |
+| message  | text       | nul: false                     |
+| team     | references | null: false, foreign_key: true |
+| calendar | references | null: false, foreign_key: true |
 
 ### association
-- belong_to :team
+- belongs_to :team
+- belongs_to :calendar
 
 ## userテーブル
 | colum              | type   | options     |

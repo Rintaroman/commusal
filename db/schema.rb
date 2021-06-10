@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_07_074415) do
+ActiveRecord::Schema.define(version: 2021_06_09_154739) do
 
   create_table "calendars", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 2021_06_07_074415) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["team_id"], name: "index_calendars_on_team_id"
+  end
+
+  create_table "chats", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "message", null: false
+    t.bigint "team_id"
+    t.bigint "calendar_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["calendar_id"], name: "index_chats_on_calendar_id"
+    t.index ["team_id"], name: "index_chats_on_team_id"
   end
 
   create_table "joins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -62,6 +72,8 @@ ActiveRecord::Schema.define(version: 2021_06_07_074415) do
   end
 
   add_foreign_key "calendars", "teams"
+  add_foreign_key "chats", "calendars"
+  add_foreign_key "chats", "teams"
   add_foreign_key "joins", "calendars"
   add_foreign_key "joins", "teams"
   add_foreign_key "teams", "users"
