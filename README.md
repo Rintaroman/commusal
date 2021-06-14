@@ -21,8 +21,8 @@
 ## ユーザー管理機能、フットサルチーム登録機能、対戦募集機能、対戦参加機能、チャット機能
 
 # 実装した機能についての画像やGIFおよびその説明
-## 対戦募集投稿動画： https://gyazo.com/f7a71ceef334417d1854e4d7af18cab1
-## チャット投稿機能動画: https://gyazo.com/c8fe4649e12341f3388850c5a02ae5a9
+## 対戦募集投稿動画： ![3055d0f02e44e2018a8eccef6507db0b](https://user-images.githubusercontent.com/82862665/121928717-68ed8480-cd7b-11eb-9917-f64364235a2b.gif)
+## チャット投稿機能動画: ![c8fe4649e12341f3388850c5a02ae5a9](https://user-images.githubusercontent.com/82862665/121929506-3c863800-cd7c-11eb-8b68-48eaa434efcf.gif)
 
 # 実装予定の機能
 ## カレンダーに対戦相手募集掲載、チーム間でのチャット機能
