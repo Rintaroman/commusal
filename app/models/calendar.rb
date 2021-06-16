@@ -3,7 +3,7 @@ class Calendar < ApplicationRecord
   belongs_to_active_hash :prefecture
   belongs_to :team 
   has_one :join, dependent: :destroy
-  has_many :chats
+  has_many :chats, dependent: :destroy
 
   with_options presence: true do
     validates :date

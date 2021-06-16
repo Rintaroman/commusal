@@ -39,6 +39,7 @@ class CalendarsController < ApplicationController
   def destroy
       calendar = Calendar.find(params[:id])
       calendar.destroy
+      redirect_to calendars_path
   end
 
   
