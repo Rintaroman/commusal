@@ -1,7 +1,4 @@
-<div class= "registration_top">
-  <%= link_to image_tag("commusal_icon.png", class:"image_icon"), root_path %>
-  <h1>コミュサル</h1>
-</div>
+<%= render 'shared/pagetop'%>
 
 <div class= "calendar_show">
   <%= @calendar.title %>
@@ -12,7 +9,7 @@
       <tbody>
         <tr>
           <th class="table__col1">日時</th>
-          <td class="table__col2"><%= @calendar.date %></td>
+          <td class="table__col2"><%= l @calendar.date, format: :short %></td>
         </tr>
         <tr>
           <th class="table__col1">都道府県</th>
@@ -32,7 +29,7 @@
         </tr>
         <tr>
           <th class="table__col1">募集締め切り日</th>
-          <td class="table__col2"><%= @calendar.deadline %></td>
+          <td class="table__col2"><%= l @calendar.deadline, format: :short %></td>
         </tr>
         <tr>
           <th class="table__col1">募集投稿チーム</th>
