@@ -1,5 +1,5 @@
 class CalendarsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :show]
   
   def index
     @calendars = Calendar.all
