@@ -25,7 +25,7 @@
         </tr>
         <tr>
           <th class="table__col1">募集チーム数</th>
-          <td class="table__col2"><%= @calendar.recruitment %></td>
+          <td class="table__col2"><%= @calendar.recruitment %><span class="number-remaining"> /残数<%= @calendar.recruitment - @join_count %></span></td>
         </tr>
         <tr>
           <th class="table__col1">募集締め切り日</th>

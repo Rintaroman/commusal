@@ -3,6 +3,8 @@ class JoinsController < ApplicationController
   def new
     @join = Join.new
     @calendar = Calendar.find(params[:calendar_id])
+    @join_count= Join.count
+
   end
 
   def create

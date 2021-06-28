@@ -21,6 +21,7 @@ class CalendarsController < ApplicationController
   def show
     @calendar = Calendar.find(params[:id])
     @join = Join.new
+    @join_count= Join.count
   end
 
   def edit
