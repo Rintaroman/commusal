@@ -5,8 +5,10 @@
 
 .edit_team{
   text-decoration: none;
-  color: black;
-  
+  color: whitesmoke;
+  background-color: orange;
+  padding: 10px;
+  font-size: 30px;
 }
 
 .table__col1{
@@ -15,7 +17,6 @@
   background: #fafafa;
   border-collapse: collapse;
   border: 1px solid #f5f5f5;
-  
   padding: 8px;
   
 }

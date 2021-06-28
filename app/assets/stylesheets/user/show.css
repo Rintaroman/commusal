@@ -12,10 +12,13 @@
   margin-top: 30px;
   margin-bottom: 60px;
   padding-bottom: 20px;
-  
+  align-items: center;
 }
 
 .delete_team{
   text-decoration: none;
   color: black;
+  background-color: silver;
+  font-size: 30px;
+  padding: 10px;
 }
