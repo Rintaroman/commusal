@@ -1,3 +1,7 @@
+.calendar-top{
+  margin-bottom: 20px;
+}
+
 .calendar-body{
   margin: 20px;
 }
@@ -17,6 +21,8 @@
 
 .calendar-new{
   color: blue;
+  margin: 5px;
+  font-size: 20px;
 }
 
 .date-wrap{
