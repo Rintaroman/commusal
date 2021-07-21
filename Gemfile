@@ -60,3 +60,5 @@ gem 'pry-rails'
 gem 'active_hash'
 
 gem "simple_calendar", "~> 2.4"
+
+gem "aws-sdk-s3", require: false
